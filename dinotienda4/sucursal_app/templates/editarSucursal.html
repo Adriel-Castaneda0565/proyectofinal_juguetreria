@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+
+
+{% block cuerpo %}
+<div class="row"><!--LA FILA-->
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!--columna izquierda-->
+ 
+      <h1>Editar</h1>
+      <div class="card"><!--la tarjeta-->
+       <div class="card-body">
+         <form action="/editarSucursal/" method="POST">{% csrf_token %}<!--falta action-->
+           <div class="form-group py-2">
+             <input type="text" id="txtid" name="txtid" class="form-control"
+             value="{{misucursal.id_suc}}" minlength="1"  maxlength="6" required readonly>
+           </div>
+           <div class="form-group py-2">
+             <input type="text" id="txtnombre" name="txtnombre" class="form-control"
+             value="{{misucursal.nombre}}" minlength="1"  maxlength="100" required>
+           </div>
+           <div class="form-group py-2">
+             <input type="text" id="txtdir" name="txtdir" class="form-control"
+             value="{{misucursal.direccion}}" minlength="1" maxlength="100"  equired>
+           </div>
+           <div class="form-group py-2">
+             <input type="text" id="txttelf" name="txttelf" class="form-control"
+             value="{{misucursal.telefono}}" minlength="1" maxlength="100"  equired>
+           </div>
+           <div class="form-group py-2">
+             <input type="text" id="txtemail" name="txtemail" class="form-control"
+             value="{{misucursal.email}}" minlength="1" maxlength="100"  equired>
+           </div>
+           <div class="form-group py-2">
+             <input type="text" id="txthora" name="txthora" class="form-control"
+             value="{{misucursal.horario}}" minlength="1" maxlength="100"  equired>
+           </div>
+           <div class="form-group py-2">
+             <input type="text" id="txtcp" name="txtcp" class="form-control"
+             value="{{misucursal.CP}}" minlength="1" maxlength="100"  equired>
+           </div>
+           <div class="form-group py-2">
+             <input type="text" id="txtweb" name="txtweb" class="form-control"
+             value="{{misucursal.web}}" minlength="1" maxlength="100"  equired>
+           </div>
+           <div class="form-group py-2">
+             <button type="submit" class="btn btn-primary">Guardar Producto</button>
+           </div>
+ 
+         </form>
+       </div>
+     </div><!--la tarjeta-->
+    </div><!--columna izquierda-->
+    {% endblock %}
